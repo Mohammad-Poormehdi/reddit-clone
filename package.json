@@ -44,7 +44,7 @@
     "date-fns": "^2.30.0",
     "editorjs-react-renderer": "^3.5.1",
     "eslint": "8.41.0",
-    "eslint-config-next": "13.4.4",
+    "eslint-config-next": "^12.0.4",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.221.0",
     "nanoid": "^4.0.2",
@@ -69,5 +69,9 @@
   "devDependencies": {
     "@types/editorjs__header": "^2.6.0",
     "@types/lodash.debounce": "^4.0.7"
-  }
+  },
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
