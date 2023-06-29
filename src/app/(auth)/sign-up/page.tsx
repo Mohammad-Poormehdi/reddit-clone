@@ -1,4 +1,5 @@
 import SingIn from "@/components/SignIn";
+import SignUp from "@/components/SingUp";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon } from "lucide-react";
@@ -17,7 +18,7 @@ function Page() {
           <ChevronLeftIcon />
           Home
         </Link>
-        <SingIn />
+        <SignUp />
       </div>
     </div>
   );
