@@ -4,9 +4,11 @@ import getSubredditByName from "@/actions/getSubredditByName";
 import getSubscriptionByName from "@/actions/getSubscriptionByName";
 import getSubscription from "@/actions/getSubscriptionByName";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import { buttonVariants } from "@/components/ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 async function Layout({
@@ -59,6 +61,15 @@ async function Layout({
                     isSubscribed={isSubscribed}
                   />
                 ) : null}
+                <Link
+                  href={`r/${subredditName}/submit`}
+                  className={buttonVariants({
+                    variant: "outline",
+                    className: "w-full mb-6",
+                  })}
+                >
+                  Create Post
+                </Link>
               </dl>
             </div>
           </div>
