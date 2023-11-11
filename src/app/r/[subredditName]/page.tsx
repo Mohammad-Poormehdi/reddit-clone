@@ -23,6 +23,9 @@ async function Page({ params }: PageProps) {
         include: { author: true, votes: true, comments: true, subreddit: true },
       },
     },
+    orderBy: {
+      createdAt: "desc",
+    },
     take: INFINITE_SCROLLING_PAGINATION_RESULTS,
   });
 

@@ -3,7 +3,7 @@
 import { ExtendedPost } from "@/types/db";
 import { useIntersection } from "@mantine/hooks";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "../../config";
 import axios from "axios";
 import { useSession } from "next-auth/react";
@@ -42,7 +42,11 @@ const PostFeed: React.FC<PostFeedProps> = ({ initialPosts, subredditName }) => {
   );
 
   const posts = data?.pages.flatMap((page) => page) ?? initialPosts;
-
+  useEffect(() => {
+    if (entry?.isIntersecting) {
+      fetchNextPage();
+    }
+  }, [entry, fetchNextPage]);
   return (
     <>
       <ul className="flex flex-col col-span-2 space-y-6">
